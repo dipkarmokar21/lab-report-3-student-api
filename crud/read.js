@@ -35,7 +35,7 @@ async function readTopStudents() {
   return topFive;
 }
 
-// Practice task: find students with marks below 50
+
 async function readFailed() {
   const failed = await Student.find({ marks: { $lt: 50 } });
   return failed;

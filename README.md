@@ -15,7 +15,7 @@ This Node.js project follows the CRUD Student Handout through Step 5. It connect
 3. Run `npm run dev` or `npm start`.
 4. Open `http://localhost:3000/`. The response is `{"message":"Student CRUD demo is running"}`. The terminal prints `MongoDB connected successfully.` when Atlas connects.
 
-## Why the DNS setting is used
+## Why the DNS setting is used 
 
 An Atlas URI beginning with `mongodb+srv://` requires an SRV DNS lookup so the MongoDB driver can discover the cluster's database hosts. This project previously got `querySrv ECONNREFUSED` from Node.js's default DNS resolver, even though SRV lookups worked through other resolvers.
 
