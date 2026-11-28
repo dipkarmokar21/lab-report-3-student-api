@@ -35,10 +35,24 @@ async function readTopStudents() {
   return topFive;
 }
 
+// Practice task: find students with marks below 50
+async function readFailed() {
+  const failed = await Student.find({ marks: { $lt: 50 } });
+  return failed;
+}
+
+// Practice task: find students enrolled in a given course
+async function readByCourse(course) {
+  const students = await Student.find({ enrolledCourses: course });
+  return students;
+}
+
 module.exports = {
   readAll,
   readPassed,
   readById,
   readByEmail,
-  readTopStudents
+  readTopStudents,
+  readFailed,
+  readByCourse
 };

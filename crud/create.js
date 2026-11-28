@@ -42,9 +42,31 @@ async function createInvalid() {
   }
 }
 
+// Practice task: duplicate email error (unique: true on email)
+async function createDuplicateEmail() {
+  try {
+    await Student.create({ name: "Duplicate Alice", email: "alice@example.com", marks: 80 });
+    return { failed: false };
+  } catch (err) {
+    return { failed: true, message: err.message };
+  }
+}
+
+// Practice task: negative marks error (min: 0 on marks)
+async function createNegativeMarks() {
+  try {
+    await Student.create({ name: "Negative Marks", email: "neg@example.com", marks: -5 });
+    return { failed: false };
+  } catch (err) {
+    return { failed: true, message: err.message };
+  }
+}
+
 module.exports = {
   createWithSave,
   createWithCreate,
   createMany,
-  createInvalid
+  createInvalid,
+  createDuplicateEmail,
+  createNegativeMarks
 };

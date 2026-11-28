@@ -1,4 +1,8 @@
+const dns = require("dns");
 const mongoose = require("mongoose");
+
+// Force public DNS for SRV lookups when local/ISP DNS refuses _mongodb._tcp queries
+dns.setServers(["8.8.8.8", "1.1.1.1"]);
 
 async function connectDB() {
   try {
